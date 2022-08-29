@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="../dist/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="input.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Anime-Shop</title>
+  </head>
+  <body class="bg-slate-300">
+    <header class="fixed top-0 left-0 right-0">
+      <!-- nav-bar -->
+      <nav class="bg-gray-200 shadow-lg">
+        <div>
+          <ul class="list-none flex justify-between items-center">
+            <li>
+              <a href=""
+                ><img class="w-10 p-1" src="images/logo.jpg" alt=""
+              /></a>
+            </li>
+            <li>
+              <h1 class="py-1 font-bold">Anime Shop</h1>
+              <small>Hobby Store</small>
+            </li>
+            <!-- search-bar -->
+            <li>
+              <form action="" class="relative w-max mx-auto">
+                <input
+                  type="search"
+                  name="search"
+                  id="search-input"
+                  placeholder="Search"
+                  class="relative peer z-10 bg-transparent w-12 h-12 rounded-full border cursor-pointer outline-none pl-12 focus:w-full focus:border-black-300 focus:cursor-text focus:pl-16 focus:pr-4 border-black"
+                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute inset-y-1 my-auto h-8 w-12 px-3.5 stroke-gray-500 border-r border-transparent peer-focus:border-black-300 peer-focus:stroke-black-500"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </form>
+            </li> 
+            <li><span class="px-10"><ul class="list-none flex pl-">
+              <li class="px-4"><a href="">About</a></li>
+              <li class="px-4"><a href=""></a>Contact</li>
+              <li class="px-4"><a href="">Shop</a></li>
+              <li class="px-4"><a href="">Help</a></li>
+            </ul> </span></li>
+
+            <!-- login  -->
+            <li><a href=""><i class="fas fa-user fa-2x "></i></a></li>
+            
+            
+          </ul>
+        </div>
+      </nav>
+      <!-- second-nav -->
+      <div class="pt-2 flex justify-between">
+        <ul class="list-none items-center flex">
+          <li>
+            <a href=""><i class="px-3 fa-brands fa-facebook fa-lg"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="fa-brands fa-paypal fa-lg"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="px-3 fa-solid fa-share-nodes fa-lg"></i></a>
+          </li>
+          
+        </ul>
+        <div class="items-center" >
+          <i class="toggle fa-solid fa-cart-plus text-2xl cursor-pointer" onclick="Open()"></i>
+        </div>
+
+        <div class="sidebar fixed  top-0 bottom-0 lg:right-0 left-[-500px] p-2 w-[500px] overflow-y-auto text-center bg-gray-50">
+          <div>
+            <header class="flex justify-between shadow-lg p-4">
+             <i class="fa-solid fa-arrow-left fa-2x items-center cursor-pointer" onclick="Open()"></i>
+             <h1 class="text-center text-4xl">My Cart</h1>  
+             <span> </span>   
+           </header>
+
+    <!-- Your Cart -->
+
+
+          <div class="cart-items">
+      <!-- cart item container  -->
+        
+          </div>
+   
+           <hr class="mt-4" />
+          <!-- total row -->
+
+          <div class="text-xl m-5 mt-4">
+           <p class="justify-center">Total</p>
+          <span class="cart-total-price justify-end flex">0.00</span>
+          </div>
+
+          <!-- check out btn -->
+          <div>
+            <button class="bg-slate-700 text-white rounded-md p-3 shadow-xl border transition-all hover:shadow-none hover:bg-slate-900">
+              Check Out
+            </button>
+          </div>
+          </div>
+          </div>
+        </div>
+        </header>
+
+
+      <!-- category  -->
+
+    <section class="container mx-48">
+      <h2 class="text-2xl pt-4 pb-8">Categorys</h2>
+      <ul class="category-head flex flex-wrap justify-between text-center">
+        <li  class="category-btn active" id="all">
+            <img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/figure images/law.jpg"
+              alt=""
+            />
+          <a href=""><h4 class="text-lg">All</h4></a>
+        </li>
+        <li  >
+          <button type="button" class="category-btn active-btn" id="figures"><img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/figure images/luffy-gear-4.webp"
+              alt=""
+            /></button>
+            
+         
+          <a href=""><h4 class="text-lg">Figures</h4></a>
+        </li>
+        <li  class="category-btn" id="hoddies">
+            <img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/anime clothes/aot.jpg"
+              alt="" />
+          <a href=""><h4 class="text-lg">Hoddies</h4></a>
+        </li>
+        <li  class="category-btn" id="katanas">
+          
+            <img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/katana images/suishi.jpg"
+              alt=""
+          />
+          <a href=""><h4 class="text-lg">Katanas</h4></a>
+        </li>
+        <li  class="cursor-pointer category-btn" id="sneakers">
+          <a href=""
+            ><img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/sneaker/midoriya-sk.jpg"
+              alt=""
+          /></a>
+          <a href=""><h4 class="text-lg">Sneakers</h4></a>
+        </li>
+        <li  class="category-btn" id="headphones">
+            <img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/headphones/remilia.jpg"
+              alt=""
+          />
+          <a href=""><h4 class="text-lg">Headphones</h4></a>
+        </li>
+        <li  class="category-btn" id="back-packs">
+            <img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/anime-backpack/toilet.jpg"
+              alt=""
+          />
+          <a href=""><h4 class="text-lg">Back Packs</h4></a>
+        </li>
+        <li  class="category-btn" id="tshirts">
+            <img
+              class="cursor-pointer rounded-[50%] min-h-10 w-44 h-33 px-5 gap-10"
+              src="images/anime tshirt/Mha.webp"
+              alt=""
+            />
+          <a href=""><h4 class="text-lg">Tshirts</h4></a>
+        </li>
+      </ul>
+    </section>
+                      <!-- card --> 
+
+                     
+    
+    <section class="container pt-20 mx-36">
+      <h3 class="text-2xl pb-5">All</h3>
+      <ul class="items flex justify-center items-center flex-wrap gap-5"> 
+              
+                    <!-- Luffy Gear 4 -fg -->
+
+        <li class="shop-item figures bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden">
+        <img class="shop-item-image w-full object-cover"
+        src="images/figure images/luffy-gear-4.webp" alt="luffy-gear-4-fg">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Luffy Gear-4</h4>
+
+          <strong>Figures</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              90.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                100.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 10.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+
+          <!-- Zoro Time Skip -fg -->
+
+        <li class="shop-item figures figures bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/figure images/zoro-time-skip.jpg" alt="Zoro-fg">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Zoro ,Time Skip</h4>
+
+          <strong>Figures</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              50.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                80.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 30.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+
+              <!-- Yamato-fg -->
+
+        <li class="shop-item figures bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/figure images/yamato.jpg" alt="Yamato-fg">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Yamato ,Wano</h4>
+
+          <strong>Figures</strong>
+
+          <!-- product prcie -->
+          <div>
+             <span class="shop-item-price text-xl font-bold">
+              80.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                100.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 20.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+        
+              <!-- aot hd -->
+
+        <li data-filter="hoddies" class="shop-item hoddies bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/anime clothes/aot.jpg" alt="aot-hd">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Attack On Titans</h4>
+
+          <strong>Hoddies</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              35.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                40.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 5.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+
+                <!-- hd-1 -->
+
+       <li data-filter="hoddies" class="shop-item hoddies bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/anime clothes/hoddie-1.webp" alt="hd-1">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Hoddies</h4>
+
+          <strong>Hoddies</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              28.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                30.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 2.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+
+                <!-- emma-ktn -->
+
+        <li data-filter="katanas" class="shop-item katanas bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/katana images/emma.jpg" alt="emma">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Emma</h4>
+
+          <strong>Katanas</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              30.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                40.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 10.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+
+                  <!-- midoriya sk -->
+
+        <li data-filter="sneakers" class="shop-item sneakers bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/sneaker/midoriya-sk.jpg" alt="midoriya-sk">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">Midoriya</h4>
+
+          <strong>Sneakers</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              20.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                25.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 5.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button  -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+
+                  <!--mha ts  -->
+
+        <li data-filter="tshirts" class="shop-item tshirts bg-white text-gray-700
+        w-72 min-h-[10rem]
+        shadow-lg rounded-md overflow-hidden gap-80">
+        <img class="shop-item-image w-full object-cover"
+        src="images/anime tshirt/Mha.webp" alt="mha">
+        
+        <div class="p-5 flex flex-col gap-3">
+          <!-- badge -->
+          <div class="flex items-center gap-2">
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Stock ready</span>
+            <span class="badge px-3 py-1 rounded-full text-xs bg-gray-100">Offical store</span>
+          </div>
+          <!-- shop-item-title -->
+          <h4 class="shop-item-title font-semibold text-2xl 
+          overflow-ellipsis overflow-hidden whitespace-nowrap">MHA</h4>
+
+          <strong>T Shirts</strong>
+
+          <!-- product prcie -->
+          <div>
+            <span class="shop-item-price text-xl font-bold">
+              10.00
+            </span>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-sm line-through opacity-50">
+                15.00
+              </span>
+              <span class="bg-green-400 px-1.5 py-0.5 rounded-md text-xs text-white">
+                save 5.00
+              </span>
+            </div>
+          </div>
+
+          <div class="mt-5 flex gap-2">
+
+            <!-- button -->
+            <button class="shop-item-button bg-gray-600 hover:bg-gray-400 px-6 py-2 rounded-md text-white font-medium tracking-wider transition">
+              Add To Cart
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </button>
+            <button class="flex-grow flex justify-center items-center bg-slate-300 hover:bg-slate-200 transition rounded-md">
+              <svg xmlns="http://www.w3.org/2000/svg" class="opacity-50 h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+              </svg>
+            </button>
+          </div>
+        </li> 
+      </ul> 
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-slate-500 mt-5 shadow-inner">
+      <div class="container flex justify-between">
+        <div>
+          <h4 class="text-xl p-5">SiteMap</h4>
+          <ul>
+            <li class="px-5 py-1"><a href="">About us</a></li>
+            <li class="px-5 py-1"><a href="">Servies</a></li>
+            <li class="px-5 py-1"><a href="">Blog</a></li>
+            <li class="px-5 py-1"><a href="">Contact us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl p-5">Product</h4>
+          <ul>
+            <li class="px-5 py-1"><a href="">Figures</a></li>
+            <li class="px-5 py-1"><a href="">Sneakers</a></li>
+            <li class="px-5 py-1"><a href=""></a>Katanas</li>
+            <li class="px-5 py-1"><a href="">Discord Items</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl p-5">Help</h4>
+          <ul>
+            <li class="px-5 py-1"><a href="">Getting Started</a></li>
+            <li class="px-5 py-1"><a href="">Netword status</a></li>
+            <li class="px-5 py-1"><a href="">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xl py-5">SUBSCRIBE</h4>
+          <form action="">
+            <input class="bg-transparent p-2 pr-16 border border-black rounded-lg" type="email" name="email" id="email" placeholder="Enter email address">
+            <button class="bg-transparent rounded-md p-2 shadow-xl border border-black transition hover:shadow-none hover:bg-slate-700">SEND</button>
+          </form>
+          <ul class="flex mt-5">
+            <li>
+              <a href=""><i class="fa-brands fa-facebook mx-3 fa-xl"></i></a>
+            </li>
+            <li>             
+              <a href=""><i class="fa-brands fa-twitter mx-3 fa-xl"></i></a>
+            </li>
+            <li>           
+              <a href=""> <i class="fa-brands fa-telegram mx-3 fa-xl"></i></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="p-5 px-12 flex">
+        <p>@2022 All rights reserved. <a href="index.html"><span class="text-blue-900">Anime Store Online Business Shop</span></p></a>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
